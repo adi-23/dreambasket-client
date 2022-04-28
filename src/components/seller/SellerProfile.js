@@ -36,7 +36,7 @@ function SellerProfile({sellername,sellerId}) {
             "address" : address
         }
 
-        axios.post("http://localhost:5000/sellers/${sellerId}/sellerprofile", addressInfo)
+        axios.post("https://evening-escarpment-79429.herokuapp.com/sellers/${sellerId}/sellerprofile", addressInfo)
 
         navigate('/seller/home')
 

@@ -13,7 +13,7 @@ const SellerProductCard = props => {
     const [profile, setProfile] = useState({profiles : []})
 
     const fetchData = (userId) =>{    // This get the user profile details
-        return fetch(`http://localhost:5000/users/${userId}/userprofile`)
+        return fetch(`https://evening-escarpment-79429.herokuapp.com/users/${userId}/userprofile`)
             .then((response) => response.json())
             .then((data)=> {
                 setProfile({profiles : data

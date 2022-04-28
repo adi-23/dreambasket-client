@@ -19,7 +19,7 @@ function Cart({userId, username }) {
   })
 
   const fetchData = ()=> {
-    const url=`http://localhost:5000/users/${userId}/cart`
+    const url=`https://evening-escarpment-79429.herokuapp.com/users/${userId}/cart`
     return fetch(url).then((response)=>response.json()).then((data)=>{
       console.log(data)
       setCartinfo({
@@ -31,7 +31,7 @@ function Cart({userId, username }) {
 const {cart} = cartinfo
 
 const deleteFromCart= async (item)=>{
-  await axios.delete(`http://localhost:5000/users/${item.userId}/cart/${item.id}`).then((res)=>{
+  await axios.delete(`https://evening-escarpment-79429.herokuapp.com/users/${item.userId}/cart/${item.id}`).then((res)=>{
     console.log("deleted Successfully").catch((err) => {
       console.log(err);
     });
@@ -39,7 +39,7 @@ const deleteFromCart= async (item)=>{
 }
 
 const deleteFromProduct= async (item)=>{
-  await axios.delete(`http://localhost:5000/users/${item.userId}/sellerproduct/${item.pid}`).then((res)=>{
+  await axios.delete(`https://evening-escarpment-79429.herokuapp.com/users/${item.userId}/sellerproduct/${item.pid}`).then((res)=>{
     console.log("product deleted Successfully").catch((err) => {
       console.log(err);
     });
@@ -53,7 +53,7 @@ const changeQuantity = async(item) =>{
 
   else{
     
-    axios.patch(`http://localhost:5000/users/${item.userId}/sellerproduct/${item.pid}`,{productquantity: item.productquantity - 1})
+    axios.patch(`https://evening-escarpment-79429.herokuapp.com/users/${item.userId}/sellerproduct/${item.pid}`,{productquantity: item.productquantity - 1})
 
   }
 }
@@ -79,7 +79,7 @@ const changeQuantity = async(item) =>{
         sellerId: item.sellerId
       };
       //Hitting the url with  post method to add an order in json
-      axios.post(`http://localhost:5000/users/${item.userId}/orders`, order).then((res) => {
+      axios.post(`https://evening-escarpment-79429.herokuapp.com/users/${item.userId}/orders`, order).then((res) => {
           console.log("product" + item.id + " added to orders table");
           setTimeout(() => {
             changeQuantity(item)

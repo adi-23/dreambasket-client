@@ -15,7 +15,7 @@ function SellerProfileDetails({sellername,sellerId}) {
     const [profile, setProfile] = useState({profiles : []})
 
     const fetchData = (sellerId) =>{
-        return fetch(`http://localhost:5000/sellers/${sellerId}/sellerprofile`)   // fetching the Profile details if exist
+        return fetch(`https://evening-escarpment-79429.herokuapp.com/sellers/${sellerId}/sellerprofile`)   // fetching the Profile details if exist
             .then((response) => response.json())
             .then((data)=> {
                 setProfile({profiles : data

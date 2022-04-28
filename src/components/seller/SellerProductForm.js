@@ -24,7 +24,7 @@ function SellerProductForm({brandname, sellername, cid,sellerId}) {
     }
     // fetch the data of brands and set the data into {brand : []}
     const fetchdata = ()=>{
-       return fetch("http://localhost:5000/brands").then((response)=>
+       return fetch("https://evening-escarpment-79429.herokuapp.com/brands").then((response)=>
         response.json()).then((data)=>{
             console.log(data)
             setBrandsinfo({
@@ -66,7 +66,7 @@ function SellerProductForm({brandname, sellername, cid,sellerId}) {
             productquantity : fdata.get('productquantity'),
             Category : cid
         }
-        await axios.post(`http://localhost:5000/sellers/${sellerId}/sellerproduct`,prod).then((res)=>console.log("completed")).catch((err)=>console.log(err))// posting the data to sever using axios
+        await axios.post(`https://evening-escarpment-79429.herokuapp.com/sellers/${sellerId}/sellerproduct`,prod).then((res)=>console.log("completed")).catch((err)=>console.log(err))// posting the data to sever using axios
         console.log(
             sellerId
             

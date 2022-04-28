@@ -57,7 +57,7 @@ function Orders({username,userId}){
     })
     // fetch the data of brands and set the data into {brand : []}
     const fetchdata = (userId)=>{
-       return fetch(`http://localhost:5000/users/${userId}/orders`).then((response)=>   // fetching the orders of the current user
+       return fetch(`https://evening-escarpment-79429.herokuapp.com/users/${userId}/orders`).then((response)=>   // fetching the orders of the current user
         response.json()).then((data)=>{
             console.log(data)
             setOrderinfo({

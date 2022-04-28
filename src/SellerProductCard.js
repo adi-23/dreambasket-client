@@ -38,3 +38,4 @@ const SellerProductCard = props => {
 };
 
 export default SellerProductCard;
+

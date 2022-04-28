@@ -27,7 +27,7 @@ const CartProduct = ({cartpro,cart}) => {
     };
 
     console.log(product.userId)
-    await axios.delete(`http://localhost:5000/users/${product.userId}/cart/${product.id}`)
+    await axios.delete(`https://evening-escarpment-79429.herokuapp.com/users/${product.userId}/cart/${product.id}`)
     
     // Deleting an item from cart in state
     sellerstore.dispatch(action);
@@ -38,7 +38,7 @@ const CartProduct = ({cartpro,cart}) => {
   // Increment the qunatity of item
   const Increment = (product) => {
     if(product.qty < product.productquantity){
-      axios.patch(`http://localhost:5000/users/${product.userId}/cart/${product.id}`,{qty: product.qty + 1})
+      axios.patch(`https://evening-escarpment-79429.herokuapp.com/users/${product.userId}/cart/${product.id}`,{qty: product.qty + 1})
       sellerstore.dispatch({type : "INCREMENT_QUANTITY", payload : {item : product}})
     }
     else{
@@ -56,7 +56,7 @@ const CartProduct = ({cartpro,cart}) => {
 
     else{
       
-      axios.patch(`http://localhost:5000/users/${product.userId}/cart/${product.id}`,{qty: product.qty - 1})
+      axios.patch(`https://evening-escarpment-79429.herokuapp.com/users/${product.userId}/cart/${product.id}`,{qty: product.qty - 1})
       sellerstore.dispatch({type : "DECREMENT_QUANTITY", payload : {item : product}})
 
     }
@@ -66,7 +66,7 @@ const CartProduct = ({cartpro,cart}) => {
     <div>
 
 <div className="c-box">
-{/* <img image = {`http://localhost:5000/uploads/${product.Images[0].filePath}`} alt=""></img> */}
+{/* <img image = {`https://evening-escarpment-79429.herokuapp.com/uploads/${product.Images[0].filePath}`} alt=""></img> */}
             <div className="c-content">
             <h3>Product Name - {cartpro.productname}</h3>
             <h3>Product brand - {cartpro.productbrand}</h3>

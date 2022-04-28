@@ -19,7 +19,7 @@ const Product = ({product,username,userId}) => {
       })
     
       const fetchData = (userId)=> {
-        const url=`http://localhost:5000/users/${userId}/cart`
+        const url=`https://evening-escarpment-79429.herokuapp.com/users/${userId}/cart`
         return fetch(url).then((response)=>response.json()).then((data)=>{
           console.log(data)
           setCartinfo({
@@ -44,7 +44,7 @@ const Product = ({product,username,userId}) => {
                 if(c.qty < product.productquantity){    // checking if stock of product is available
                     console.log(c.qty)
                     flag =1
-                    axios.patch(`http://localhost:5000/users/${product.userId}/cart/${c.id}`,{qty: c.qty + 1}).then((res)=>console.log(res))
+                    axios.patch(`https://evening-escarpment-79429.herokuapp.com/users/${product.userId}/cart/${c.id}`,{qty: c.qty + 1}).then((res)=>console.log(res))
                     sellerstore.dispatch({type : "ADD_TO_CART", payload : {item : product, username : username }})
                 }
                 else{
@@ -55,7 +55,7 @@ const Product = ({product,username,userId}) => {
             
         }
         if(flag === 0){
-            const url = `http://localhost:5000/users/${userId}/cart`
+            const url = `https://evening-escarpment-79429.herokuapp.com/users/${userId}/cart`
             await axios.post(url,
                 {
                     cid: product.Category,

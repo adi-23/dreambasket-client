@@ -10,7 +10,7 @@ export default function LaptopFeatures() {
     })
     const cid ="61cf30c10236a97a7bc3c4cf" // category id for Laptop
     const fetchFeature = ()=>{
-        return fetch(`http://localhost:5000/categories/${cid}/features`).then((response)=>
+        return fetch(`https://evening-escarpment-79429.herokuapp.com/categories/${cid}/features`).then((response)=>
             response.json()
         ).then((data)=>{
             console.log(data)

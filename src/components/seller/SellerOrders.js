@@ -12,7 +12,7 @@ const SellerOrders = ({sellername,sellerId})=>{
     })
     // fetch the data of brands and set the data into {brand : []}
     const fetchdata = (sellerId)=>{   // To fetch orders of particular seller
-       return fetch(`http://localhost:5000/sellers/${sellerId}/orders`).then((response)=>
+       return fetch(`https://evening-escarpment-79429.herokuapp.com/sellers/${sellerId}/orders`).then((response)=>
         response.json()).then((data)=>{
             console.log(data)
             setOrderinfo({

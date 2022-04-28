@@ -33,7 +33,7 @@ function UserSignUp(){
         const data = new FormData(event.currentTarget);
         // eslint-disable-next-line no-console
         if( data.get('username').length >=5 && data.get('email').includes('@') && data.get('password').length>=8){
-            await axios.post("http://localhost:5000/users",{
+            await axios.post("https://evening-escarpment-79429.herokuapp.com/users",{
                 username: data.get('username'),
                 // firstName: data.get('firstName'),
                 // lastName : data.get('lastName'),

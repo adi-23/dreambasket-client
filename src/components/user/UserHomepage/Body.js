@@ -16,7 +16,7 @@ function Body(){
 
 // fetching categories 
     const fetchdata = ()=>{
-        return fetch("http://localhost:5000/categories").then((response)=>
+        return fetch("https://evening-escarpment-79429.herokuapp.com/categories").then((response)=>
          response.json()).then((data)=>{
              console.log(data)
              setCategoryinfo({

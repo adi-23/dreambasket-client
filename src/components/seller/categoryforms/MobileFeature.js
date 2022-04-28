@@ -11,7 +11,7 @@ export default function MobileFeature() {
     })
     const cid ="61cf2fd30236a97a7bc3c4ca" // category id for Mobile
     const fetchFeature = ()=>{
-        return fetch(`http://localhost:5000/categories/${cid}/features`).then((response)=>
+        return fetch(`https://evening-escarpment-79429.herokuapp.com/categories/${cid}/features`).then((response)=>
             response.json()
         ).then((data)=>{
             console.log(data)

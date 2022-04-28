@@ -28,7 +28,7 @@ const Products = ({brandname, username}) => {
         console.log(brandname)
 
         if(brandname === "" || brandname === undefined){
-            return fetch(`http://localhost:5000/categories/${cat}/sellerproduct`).then((response)=>
+            return fetch(`https://evening-escarpment-79429.herokuapp.com/categories/${cat}/sellerproduct`).then((response)=>
          response.json()).then((data)=>{
              console.log(data + '---------------------------')
              setProductinfo({
@@ -40,7 +40,7 @@ const Products = ({brandname, username}) => {
         }
 
     else{
-        return fetch(`http://localhost:5000/categories/${cat}/brands/${brandname}/sellerproduct`).then((response)=>
+        return fetch(`https://evening-escarpment-79429.herokuapp.com/categories/${cat}/brands/${brandname}/sellerproduct`).then((response)=>
          response.json()).then((data)=>{
              console.log(data) 
              setProductinfo({
@@ -61,7 +61,7 @@ const Products = ({brandname, username}) => {
 
      const fetchdata1 = (categoryId)=>{
 
-        let url ="http://localhost:5000/categories/" + categoryId + "/brands"
+        let url ="https://evening-escarpment-79429.herokuapp.com/categories/" + categoryId + "/brands"
         console.log(url)
         return fetch(url).then((response)=>
          response.json()).then((data)=>{

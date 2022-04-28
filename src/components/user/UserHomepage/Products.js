@@ -24,7 +24,7 @@ function Products({username}){
     const fetchdata = ()=>{
 
 
-            return fetch(`http://localhost:5000/sellerproduct`).then((response)=>
+            return fetch(`https://evening-escarpment-79429.herokuapp.com/sellerproduct`).then((response)=>
          response.json()).then((data)=>{
              console.log(data)
              setProductinfo({

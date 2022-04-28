@@ -49,7 +49,7 @@ export default function SellerLogin() {
     if( data.get('email').includes('@') && data.get('password').length>=8)
     {
         const credentials = { "email": data.get('email'), "password": data.get('password') };
-        axios.post(`http://localhost:5000/sellerlogin`, credentials)
+        axios.post(`https://evening-escarpment-79429.herokuapp.com/sellerlogin`, credentials)
       .then((res) => {
         if (res.data) {
 

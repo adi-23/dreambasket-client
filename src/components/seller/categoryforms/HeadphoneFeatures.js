@@ -11,7 +11,7 @@ export default function HeadphoneFeatures() {
     })
     const cid = "624696fe22430c408c3efe61"// category id for Headphone
     const fetchFeature = ()=>{
-        return fetch(`http://localhost:5000/categories/${cid}/features`).then((response)=>
+        return fetch(`https://evening-escarpment-79429.herokuapp.com/categories/${cid}/features`).then((response)=>
             response.json()
         ).then((data)=>{
             console.log(data)

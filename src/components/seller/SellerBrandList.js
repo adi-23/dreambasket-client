@@ -20,7 +20,7 @@ function SellerBrandList({brandname, sellername, categoryid,sellerId}) {
     })
     
     const fetchdata = (cid)=>{
-       return fetch(`http://localhost:5000/categories/${cid}/brands`).then((response)=>
+       return fetch(`https://evening-escarpment-79429.herokuapp.com/categories/${cid}/brands`).then((response)=>
         response.json()).then((data)=>{
             console.log(data)
             setBrandinfo({
@@ -30,9 +30,9 @@ function SellerBrandList({brandname, sellername, categoryid,sellerId}) {
         
     })
     }
-
+    
     const fetchcategories=()=>{
-        return fetch("http://localhost:5000/categories").then((response)=>
+        return fetch("https://evening-escarpment-79429.herokuapp.com/categories").then((response)=>
         response.json()).then((data)=>{
             
             setCat({

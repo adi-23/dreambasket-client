@@ -13,7 +13,7 @@ const SellerProductList = ({sellername,sellerId}) => {
 
      const fetchdata = ()=>{   // Fetching all products added by current seller
   
-        let url =`http://localhost:5000/sellers/${sellerId}/sellerproduct`
+        let url =`https://evening-escarpment-79429.herokuapp.com/sellers/${sellerId}/sellerproduct`
 
         return fetch(url).then((response)=>
          response.json()).then((data)=>{

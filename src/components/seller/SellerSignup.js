@@ -33,7 +33,7 @@ export default function SellerSignup() {
       if(data.get('email').includes('@') && data.get('password').length>=8 && data.get('username').length>=5 && data.get('gst').length===15)
       {
         console.log("hi")
-        await axios.post("http://localhost:5000/sellers",{
+        await axios.post("https://evening-escarpment-79429.herokuapp.com/sellers",{
         sellername: data.get('username'),
         email: data.get('email'),
         password: data.get('password'),

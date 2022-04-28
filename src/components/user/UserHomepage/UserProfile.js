@@ -36,7 +36,7 @@ function UserProfile({username,userId}) {
             "address" : address
         }
 
-        axios.post(`http://localhost:5000/users/${userId}/userprofile`, addressInfo)
+        axios.post(`https://evening-escarpment-79429.herokuapp.com/users/${userId}/userprofile`, addressInfo)
 
         navigate('/user/home')
 
